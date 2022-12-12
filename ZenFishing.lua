@@ -6,6 +6,8 @@ ZenFishingFrame = CreateFrame("Frame");
 
 local ZFBUTTONNAME = "ZenFishingButton";
 
+ZenFishing.fishingSpellName = nil;
+
 function ZenFishing:CreateZFButton()
     local btn = _G[ZFBUTTONNAME];
     if (not btn) then
@@ -53,8 +55,7 @@ function ZenFishing:InvokeFishing()
     if (not btn) then
         return;
     end
-    local id, name = self:GetFishingSpellInfo();
-    SetOverrideBindingSpell(btn, true, "BUTTON2", name);
+    SetOverrideBindingSpell(btn, true, "BUTTON2", self.fishingSpellName);
 end
 
 function ZenFishing:ClearClickHandler()
@@ -89,6 +90,8 @@ function ZenFishing_GLOBAL_MOUSE_DOWN(...)
 end
 
 function ZenFishing:OnEnable()
+    local id, name = self:GetFishingSpellInfo();
+    self.fishingSpellName = name;
     ZenFishingFrame:RegisterEvent("GLOBAL_MOUSE_DOWN");
     ZenFishingFrame:SetScript("OnEvent", ZenFishing_GLOBAL_MOUSE_DOWN);
     print("ZenFishing is active, easy cast enabled.");
