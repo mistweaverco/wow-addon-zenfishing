@@ -15,3 +15,5 @@ Disable via
 ```
 /zfoff
 ```
+
+Icon by [Fish icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/fish)
