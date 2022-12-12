@@ -10,6 +10,8 @@ Enable via
 /zf
 ```
 
+Start fishing by double-right-clicking.
+
 Disable via
 
 ```
