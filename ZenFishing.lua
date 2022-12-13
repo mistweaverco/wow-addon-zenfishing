@@ -6,6 +6,7 @@ ZenFishingFrame = CreateFrame("Frame");
 
 local ZFBUTTONNAME = "ZenFishingButton";
 
+ZenFishing.isEnabled = false;
 ZenFishing.fishingSpellName = nil;
 
 function ZenFishing:CreateZFButton()
@@ -90,6 +91,7 @@ function ZenFishing_GLOBAL_MOUSE_DOWN(...)
 end
 
 function ZenFishing:OnEnable()
+    ZenFishing.isEnabled = true;
     local id, name = self:GetFishingSpellInfo();
     self.fishingSpellName = name;
     ZenFishingFrame:RegisterEvent("GLOBAL_MOUSE_DOWN");
@@ -98,6 +100,7 @@ function ZenFishing:OnEnable()
 end
 
 function ZenFishing:OnDisable()
+    ZenFishing.isEnabled = false;
     ZenFishingFrame:UnregisterAllEvents()
     local btn = _G[ZFBUTTONNAME];
     self:ClearClickHandler();
@@ -108,9 +111,9 @@ ZenFishing:CreateZFButton();
 
 SLASH_ZENFISHING1 = "/zf"
 SlashCmdList.ZENFISHING = function(msg, editBox)
-    ZenFishing:OnEnable();
-end
-SLASH_ZENFISHINGOFF1 = "/zfoff"
-SlashCmdList.ZENFISHINGOFF = function(msg, editBox)
-    ZenFishing:OnDisable();
+    if (ZenFishing.isEnabled) then
+        ZenFishing:OnDisable();
+    else
+        ZenFishing:OnEnable();
+    end
 end
