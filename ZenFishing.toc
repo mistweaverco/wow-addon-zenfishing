@@ -1,8 +1,9 @@
 ## Interface: 100100
 ## Title: ZenFishing
-## Version: 0.0.6
+## Version: 0.0.7
 ## Notes: Simple right click casting.
 ## Author: Walialu
 ## SavedVariablesPerCharacter: ZenFishingDB
+## IconTexture: Interface\Icons\ui_profession_fishing
 
 ZenFishing.lua
