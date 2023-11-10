@@ -1,6 +1,6 @@
 ## Interface: 100200
 ## Title: ZenFishing
-## Version: 0.0.8
+## Version: 0.0.9
 ## Notes: Simple right click casting.
 ## Author: Walialu
 ## SavedVariablesPerCharacter: ZenFishingDB
