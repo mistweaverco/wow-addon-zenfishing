@@ -1,8 +1,8 @@
-## Interface: 110005
+## Interface: 110005, 110007, 110100
 ## Title: ZenFishing
 ## Version: 0.0.11
 ## Notes: Simple right click casting.
-## Author: Walialu
+## Author: GorillaMoe
 ## SavedVariablesPerCharacter: ZenFishingDB
 ## IconTexture: Interface\Icons\ui_profession_fishing
 
